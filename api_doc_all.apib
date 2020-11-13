@@ -1,0 +1,83 @@
+FORMAT: 1A
+HOST: https://aglio.practice
+
+# 測試 Aglio 用的 API 文件
+
+## 內容
+- 這裡可以對這份文件做一點說明，可能包含 API 相關的一些限制和規定
+- 可以使用包含程式碼區塊的 Markdown 語法
+```json
+{
+    "result": true,
+    ...
+}
+```
+
+# Group 文章
+這組 API 相關的說明。
+## Create Post [/api/post/]
+
+### Create Post [POST]
+create post
+
++ Request (application/json)
+    + Body
+
+            {
+                "title": "test",
+                "content": "This is a test post."
+            }
+
+- Response 200 (application/json)
+    - Body
+
+            {
+                "id": 1,
+                "title": "test",
+                "content": "This is a test post.",
+                "created_at": "2020/11/11"
+            }
+
+## Other Post api [/api/post/{id}]
+
++ Parameters
+    + id: `1` (integer, required) - post id
+
+### Get Post [GET]
+get post
+
+- Response 200 (application/json)
+    - Body
+
+            {    
+                "id": 1,
+                "title": "test",
+                "content": "This is a test post.",
+                "created_at": "2020/11/11" 
+            }
+
+### Update Post [PUT]
+get post
+
++ Request (application/json)
+    + Body
+
+            {
+                "title": "test_updated",
+                "content": "This is a test updated post"
+            }
+
+- Response 200 (application/json)
+    - Body
+
+            {    
+                "id": 1,
+                "title": "test_updated",
+                "content": "This is a test updated post",
+                "created_at": "2020/11/11" 
+            }
+
+### Delete Post [DELETE]
+delete post
+
+- Response 200
